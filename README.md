@@ -60,4 +60,6 @@ Unocss's output is `unocss_output.css`, and windicss's output is `windicss_outpu
 }
 ```
 
+https://github.com/gavinmcfarland/flex-gap-polyfill/blob/80b6e87b6a125421a945be73c3081832e7ee8797/src/index.js#L118-L119
+
 It seems like that the `flex-gap-polyfill` plugin doesn't work as expected when there're multiple selectors in the same rule, which causes the bug.
