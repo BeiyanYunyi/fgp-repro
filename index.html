@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+
+  <body>
+    <div class="h-[48px] w-[48px] bg-green-400"></div>
+    <div class="flex flex-col gap-8">
+      <div class="h-[48px] w-[48px] bg-red-400"></div>
+    </div>
+    <p>The red div's size is expected to be the same with the green one.</p>
+    <script type="module" src="/src/main.ts"></script>
+    <!--Delete (instead of commenting as unocss will not regard the syntax) the next line, restart the dev server and refresh the page to see the expected behavior-->
+    <div anyPrefix-flex="~ col"></div>
+  </body>
+</html>

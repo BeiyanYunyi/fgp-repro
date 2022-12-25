@@ -1,0 +1,111 @@
+:root {
+  --has-fgp: initial;
+  --element-has-fgp: initial;
+  --parent-has-fgp: initial;
+}
+
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 211, 153, var(--tw-bg-opacity));
+}
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
+}
+.flex > * > * {
+  --parent-has-fgp: initial;
+}
+.flex > * {
+  --parent-has-fgp: !important;
+  --element-has-fgp: initial;
+  pointer-events: var(--parent-has-fgp) auto;
+}
+.flex {
+  --has-fgp: ;
+  --element-has-fgp: ;
+  pointer-events: var(--has-fgp) none;
+}
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+[anyPrefix-flex~="~"] > * > * {
+  --parent-has-fgp: initial;
+}
+[anyPrefix-flex~="~"] > * {
+  --parent-has-fgp: !important;
+  --element-has-fgp: initial;
+  pointer-events: var(--parent-has-fgp) auto;
+}
+[anyPrefix-flex~="~"] {
+  --has-fgp: ;
+  --element-has-fgp: ;
+  pointer-events: var(--has-fgp) none;
+}
+[anyPrefix-flex~="~"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-col,
+[anyPrefix-flex~="col"] {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.h-\[48px\] {
+  --fgp-height: var(--element-has-fgp) calc(48px + var(--fgp-gap-row, 0%));
+}
+.h-\[48px\] {
+  height: var(--fgp-height, 48px);
+}
+.w-\[48px\] {
+  --fgp-width: var(--element-has-fgp) calc(48px + var(--fgp-gap-column, 0%));
+}
+.w-\[48px\] {
+  width: var(--fgp-width, 48px);
+}
+.gap-8 > * > * {
+  --fgp-parent-gap-row: initial;
+  --fgp-parent-gap-column: initial;
+}
+.gap-8 > * {
+  pointer-events: var(--parent-has-fgp) auto;
+  --fgp-parent-gap-row: 2rem;
+  --fgp-margin-top: var(--parent-has-fgp)
+    calc(var(--fgp-gap-row) + var(--orig-margin-top, 0px));
+  margin-top: var(--fgp-margin-top);
+  --fgp-parent-gap-column: 2rem;
+  --fgp-margin-left: var(--parent-has-fgp)
+    calc(var(--fgp-gap-column) + var(--orig-margin-left, 0px));
+  margin-left: var(--fgp-margin-left);
+}
+.gap-8 {
+  pointer-events: var(--has-fgp) none;
+  --fgp-gap-row: 2rem;
+  --fgp-margin-top: var(--has-fgp)
+    calc(
+      var(--fgp-parent-gap-row, 0px) /
+        (1 + var(--fgp--parent-gap-as-decimal, 0)) - var(--fgp-gap-row) +
+        var(--orig-margin-top, 0px)
+    ) !important;
+  --fgp-gap-column: 2rem;
+  --fgp-margin-left: var(--has-fgp)
+    calc(
+      var(--fgp-parent-gap-column, 0px) /
+        (1 + var(--fgp--parent-gap-as-decimal, 0)) - var(--fgp-gap-column) +
+        var(--orig-margin-left, 0px)
+    ) !important;
+}
+.gap-8 {
+  grid-gap: 2rem;
+  --fgp-gap: var(--has-fgp, 2rem);
+  gap: var(--fgp-gap, 0px);
+  margin-top: var(--fgp-margin-top, var(--orig-margin-top));
+  margin-left: var(--fgp-margin-left, var(--orig-margin-left));
+}
